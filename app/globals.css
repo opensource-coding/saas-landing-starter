@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-accent/50;
+}
+
+:root {
+  --background: 255 255 255;
+  --foreground: 0 0 0;
+  --accent: 160 224 13;
+  --accent-hover: 130 180 10;
+  --border: 10 10 10;
+  --card: 255 255 255;
+  --card-foreground: 0 0 0;
+}
+
+:root[class~="dark"] {
+  --background: 10 10 10;
+  --foreground: 255 255 255;
+  --border: 237 237 237;
+  --card: 17 17 17;
+  --card-foreground: 255 255 255;
+}
+
+body {
+  @apply text-foreground bg-background font-jakarta;
+}
+
+* {
+  @apply border-border;
+}
+
+.hero-bg {
+  background-image: url("/images/hero-bg.png");
+  background-size: 150%;
+  background-repeat: no-repeat;
+  background-position: center 100%;
+}
+
+@media (min-width: 1024px) {
+  .hero-bg {
+    background-size: 80%;
+    background-position: center 30%;
+  }
+}
